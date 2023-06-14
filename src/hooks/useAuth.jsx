@@ -2,7 +2,7 @@ import axios from "axios";
 import { apiURL } from "./commonUrl";
 
 const useLogin = () => {
-  const Login = () => {
+  const SignUp = () => {
     axios.post(
       apiURL + "/auth/signup",
       {
