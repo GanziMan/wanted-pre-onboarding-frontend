@@ -16,5 +16,19 @@ const useLogin = () => {
       }
     );
   };
+  const SignIn = () => {
+    axios.post(
+      apiURL + "/auth/signin",
+      {
+        email: "test",
+        password: "testpassword",
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  };
 };
 export default useLogin;
