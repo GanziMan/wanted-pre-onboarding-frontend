@@ -1,7 +1,7 @@
 import axios from "axios";
 import { apiURL } from "./commonUrl";
 
-const useLogin = () => {
+const useTodo = () => {
   const createTodo = () => {
     axios.post(
       apiURL + "/todos",
@@ -28,7 +28,7 @@ const useLogin = () => {
       apiURL + "/todos/:id",
       {
         todo: "",
-        isCompleted: ture,
+        isCompleted: true,
       },
       {
         headers: {
@@ -49,5 +49,11 @@ const useLogin = () => {
       }
     );
   };
+  return {
+    createTodo,
+    getTodos,
+    deleteTodo,
+    updateTodo,
+  };
 };
-export default useLogin;
+export default useTodo;
