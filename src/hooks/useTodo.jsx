@@ -2,7 +2,7 @@ import axios from "axios";
 import { apiURL } from "./commonUrl";
 
 const useTodo = () => {
-  const createTodo = () => {
+  const fetchCreateTodo = () => {
     axios.post(
       apiURL + "/todos",
       {
@@ -16,14 +16,14 @@ const useTodo = () => {
       }
     );
   };
-  const getTodos = () => {
+  const fetchGetTodos = () => {
     axios.get(apiURL + "/todos", {
       headers: {
         Authorization: "",
       },
     });
   };
-  const updateTodo = () => {
+  const fetchUpdateTodo = () => {
     axios.post(
       apiURL + "/todos/:id",
       {
@@ -38,7 +38,7 @@ const useTodo = () => {
       }
     );
   };
-  const deleteTodo = () => {
+  const fetchDeleteTodo = () => {
     axios.delete(
       apiURL + "/todos/:id",
 
@@ -50,10 +50,10 @@ const useTodo = () => {
     );
   };
   return {
-    createTodo,
-    getTodos,
-    deleteTodo,
-    updateTodo,
+    fetchCreateTodo,
+    fetchGetTodos,
+    fetchDeleteTodo,
+    fetchUpdateTodo,
   };
 };
 export default useTodo;

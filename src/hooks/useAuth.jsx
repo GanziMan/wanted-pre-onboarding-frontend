@@ -2,7 +2,7 @@ import axios from "axios";
 import { apiURL } from "./commonUrl";
 
 const useLogin = () => {
-  const SignUp = () => {
+  const fetchSignUp = () => {
     axios.post(
       apiURL + "/auth/signup",
       {
@@ -16,7 +16,7 @@ const useLogin = () => {
       }
     );
   };
-  const SignIn = () => {
+  const fetchSignIn = () => {
     axios.post(
       apiURL + "/auth/signin",
       {
@@ -29,6 +29,10 @@ const useLogin = () => {
         },
       }
     );
+  };
+  return {
+    fetchSignIn,
+    fetchSignUp,
   };
 };
 export default useLogin;
